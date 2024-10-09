@@ -1,0 +1,20 @@
+# Packet Analysis - Medium Difficulty
+- Download and open file using wireshark.
+- Now, go to export objects
+  - Here, all options except 'TFTP' are empty.
+  - Save the files under 'TFTP'.
+- Here, we have a txt file instructions.txt
+  - Now, go to dcode.fr and check for the type of cipher this is.
+  - The ROT-13 cipher gives a sensible output.
+    - ```TFTP DOESNT ENCRYPT OUR TRAFFIC SO WE MUST DISGUISE OUR FLAG TRANSFER. FIGURE OUT A WAY TO HIDE THE FLAG AND I WILL CHECK BACK FOR THE PLAN.```
+- Add a '.txt' extension to the plan file and open it.
+  - We can find that this is also ROT-13 encrypted.
+  - We obtain ```I USED THE PROGRAM AND HID IT WITH - DUEDILIGENCE. CHECK OUT THE PHOTOS```.
+- Try to install the ```program.deb``` file using ```sudo apt-get install ./program.deb```.
+  - This will show us that the program is actually trying to install 'steghide' instead.
+- This gives us a clue that we need to use steghide to filter out information from the images.
+- Use command ```steghide extract -sf <image>``` until an output is obtained.
+  - We need a password to extract information. Use ```DUEDILIGENCE``` from the plan file.
+  - An output is generated and stored for the third image.
+- Now, print the contents of that output file to stdout using ```cat <filename>```.
+- We have thus obtained our flag.

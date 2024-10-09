@@ -1,0 +1,13 @@
+# Steganography - Medium Difficulty
+- We must edit timestamps according to given question
+- Use command - ```exiftool -AllDates='1970:01:01 00:00:00.001' -CreateDate='1970:01:01 00:00:00.001' -DateTimeOriginal='1970:01:01 00:00:00.001' -ModifyDate='1970:01:01 00:00:00.001' -SubSecCreateDate='1970:01:01 00:00:00.001' -SubSecDateTimeOriginal='1970:01:01 00:00:00.001' -SubSecModifyDate='1970:01:01 00:00:00.001' original.jpg```
+- Now, we can still see that there is 1 field we are not able to edit. This is a field that cannot be edited using a tool.
+- So, we have to edit it on ```hexedit```.
+- Now, we need to find where the data that we need to edit lies in the hex data.
+  - Such data mostly exists in form of Unix timestamps.
+  - So, we can convert the time that we need to edit to Unix timestamp and search for it.
+  - Now, we can also use other keywords such as 'UTC', 'Image', 'Time' to search for the required hexdata.
+- Once the hexdata has been found, change the Unix format according to required unix time by using any AI or online tool. (Blackbox AI is preferred).
+- Now, we can edit accordingly
+- Use hex '00' to remove data and use '30' to make data 0.
+- The final flag can be obtained from challenge instance server.
