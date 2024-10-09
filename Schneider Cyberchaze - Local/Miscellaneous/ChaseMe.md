@@ -1,5 +1,5 @@
 # Forensics - Easy Difficulty
-- A file has been provided -
+- A file has been provided - [Challenge File](https://github.com/vivek-c07/Solved-CTF-Challenges/blob/86445a98339d836956335a522473ee56e65704af/Schneider%20Cyberchaze%20-%20Local/Miscellaneous/ChaseMe0x03)
 - Download the file and extract using ```binwalk -e ChaseMe0x03```
 - Binwalk output tells us that the files inside are `zlib` compressed.
   Keep this in mind.
