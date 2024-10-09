@@ -8,7 +8,7 @@
 - From all of this we can come up with a theory that we can obtain the original file if we either flip over the
   entire hexcode in this pattern or only the header.
 - Editing only the editor using ```hexeditor``` does not do the job, so lets try the other way.
-- Now, use this python code I created to do the conversion - Pico CTF Solutions/Forensics/8-bit-interchange-jpg.py
+- Now, use this python code I created to do the conversion - [Pico CTF Solutions/Forensics/8-bit-interchange-jpg.py](https://github.com/vivek-c07/Solved-CTF-Challenges/blob/e3e5ee8f817cc620f3c8016a502afebec2ecafe6/Pico%20CTF%20Solutions/Forensics/8-bit-interchange-jpg.py)
   - Check and change filenames according to the code.
 - Add a file extension to the new file (.jpg) and open it.
   - The flag is present in the form of an image.
