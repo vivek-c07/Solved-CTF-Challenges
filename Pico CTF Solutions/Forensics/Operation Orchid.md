@@ -1,0 +1,17 @@
+# Disk Analysis - Medium Difficulty
+- Download disk image and extract using `gunzip <filename>`.
+- Now, start autopsy tool on linux by using `sudo autopsy`.
+- Now, add image to a new case and search for txt files in all partitions.
+- 2 results are returned, with 1 showing us that the file is encrypted and salted.
+- Paste the contents of the file into a text file outside the disk image.
+- We cannot break the encryption without a key.
+- So, we need to look through all strings in the disk
+  - Use `strings <disk_image> | grep '<keyword>'`.
+  - Now, replace keyword with strings like 'pico', 'flag', etc.
+- We get hits when we search for strings containing 'flag'.
+- One of the results include - `openssl aes256 -salt -in flag.txt -out flag.txt.enc -k unbreakablepassword1234567`.
+  - This suggets that the flag in the encrypted file is aes256 encrypted with the password 'unbreakablepassword1234567'.
+- Now, the output that we just analyzed is a command in itself.
+  - Edit the command and include appropriate file names.
+  - Also include `-d` in the command to indicate decryption.
+- The file gets decrypted and we can open the output file to obtain the flag.
